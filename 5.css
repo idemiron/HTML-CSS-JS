@@ -1,0 +1,94 @@
+:root {
+    --cube-width: 300px;
+    --translateZ: 150px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: black;
+}
+
+header {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: space-between;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header h1{
+    margin: 0;
+    font-size: 100px;
+}
+
+header .sub-heading { 
+    font-size: 24px;
+    margin: 0;
+}
+
+
+.cube-container{
+    perspective: 1000px;
+}
+.cube-container .cube{
+    width: var(--cube-width);
+    height: var(--cube-width);
+    transform-style: preserve-3d;
+}
+
+.cube-container .cube-face{
+    width: var(--cube-width);
+    height: var(--cube-width);
+    font-size: 30px;
+    position: absolute;
+    background: yellow;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cube-container .front {
+    background: red;
+    transform: translateZ(var(--translateZ));
+    opacity: 0.5;
+}
+
+.cube-container .back {
+    background: rgb(73, 219, 5);
+    transform: rotateY(180deg) translateZ(var(--translateZ));
+    opacity: 0.5;
+}
+
+.cube-container .left {
+    background: rgb(187, 65, 218);
+    transform: rotateY(-90deg) translateZ(var(--translateZ));
+    opacity: 0.5;
+}
+
+.cube-container .right {
+    background: rgb(231, 152, 6);
+    transform: rotateY(90deg) translateZ(var(--translateZ));
+    opacity: 0.5;
+}
+
+.cube-container .top {
+    background: black;
+    color: white;
+    transform: rotateX(90deg) translateZ(var(--translateZ));
+    opacity: 0.5;
+}
+
+.cube-container .bottom {
+    background: rgb(62, 32, 233);
+    transform: rotateX(-90deg) translateZ(var(--translateZ));
+    opacity: 0.5;
+}
